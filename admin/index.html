@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Speakly AI</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="app-layout admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="font-bold" style="color:#fff">Speakly Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="index.html" class="sidebar-link active">Overview</a>
+          <a href="users.html" class="sidebar-link">Users</a>
+          <a href="sessions.html" class="sidebar-link">Sessions</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Content</div>
+          <a href="ielts.html" class="sidebar-link">IELTS Questions</a>
+          <a href="cefr.html" class="sidebar-link">CEFR Tasks</a>
+          <a href="languages.html" class="sidebar-link">Languages</a>
+          <a href="content.html" class="sidebar-link">Learning Content</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">System</div>
+          <a href="ai-settings.html" class="sidebar-link">AI Settings</a>
+          <a href="reports.html" class="sidebar-link">Reports</a>
+          <a href="settings.html" class="sidebar-link">Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../dashboard.html" class="btn btn-ghost btn-block" style="color:#A0AEC0">← Back to app</a>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Admin Overview</h1>
+        <button class="btn btn-ghost btn-icon" data-theme-toggle data-theme-icon></button>
+      </header>
+      <div class="page-body">
+        <div class="admin-stat-grid">
+          <div class="card"><div class="stat-card"><div class="stat-icon purple"></div><div><div class="stat-value" id="aTotalUsers">0</div><div class="stat-label">Total Users</div></div></div></div>
+          <div class="card"><div class="stat-card"><div class="stat-icon green"></div><div><div class="stat-value" id="aActiveUsers">0</div><div class="stat-label">Active Users</div></div></div></div>
+          <div class="card"><div class="stat-card"><div class="stat-icon cyan"></div><div><div class="stat-value" id="aSessions">0</div><div class="stat-label">Speaking Sessions</div></div></div></div>
+          <div class="card"><div class="stat-card"><div class="stat-icon orange"></div><div><div class="stat-value" id="aMinutes">0</div><div class="stat-label">Total Minutes</div></div></div></div>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 class="mb-4">Popular languages</h3>
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between"><span>English</span><span class="badge badge-primary">62%</span></div>
+              <div class="flex justify-between"><span>Russian</span><span class="badge badge-info">18%</span></div>
+              <div class="flex justify-between"><span>German</span><span class="badge badge-info">8%</span></div>
+              <div class="flex justify-between"><span>Others</span><span class="badge">12%</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="mb-4">Quick actions</h3>
+            <div class="flex flex-col gap-2">
+              <a href="users.html" class="btn btn-secondary">Manage users</a>
+              <a href="ielts.html" class="btn btn-secondary">IELTS questions</a>
+              <a href="ai-settings.html" class="btn btn-secondary">AI settings</a>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-muted mt-6">⚠️ Admin panel is a frontend demo. Real authorization and data must be handled by a secure backend.</p>
+      </div>
+    </main>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/localization.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem">S</div>
+        <span class="font-bold">Speakly AI</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="pricing.html" class="sidebar-link active">Pricing</a>
+        <a href="profile.html" class="sidebar-link">Profile</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Pricing</h1>
+        <button class="btn btn-ghost btn-icon" data-theme-toggle data-theme-icon></button>
+      </header>
+      <div class="page-body">
+        <p class="text-muted mb-6">Demo subscription interface. No real payments.</p>
+        <div class="grid grid-3">
+          <div class="card pricing-card">
+            <h3>Free</h3>
+            <div class="pricing-price">$0</div>
+            <div class="pricing-period">/month</div>
+            <ul class="pricing-features">
+              <li>✓ Limited sessions</li>
+              <li>✓ Basic feedback</li>
+              <li>✓ Progress tracking</li>
+            </ul>
+            <button class="btn btn-secondary btn-block" onclick="App.toast('You are on Free plan','info')">Current plan</button>
+          </div>
+          <div class="card pricing-card featured">
+            <div class="pricing-badge"><span class="badge badge-primary">Popular</span></div>
+            <h3>Pro</h3>
+            <div class="pricing-price">$12</div>
+            <div class="pricing-period">/month</div>
+            <ul class="pricing-features">
+              <li>✓ More sessions</li>
+              <li>✓ Advanced AI feedback</li>
+              <li>✓ IELTS & CEFR</li>
+              <li>✓ Analytics</li>
+            </ul>
+            <button class="btn btn-primary btn-block" onclick="App.toast('Pro plan selected (demo)','success')">Upgrade</button>
+          </div>
+          <div class="card pricing-card">
+            <h3>Premium</h3>
+            <div class="pricing-price">$24</div>
+            <div class="pricing-period">/month</div>
+            <ul class="pricing-features">
+              <li>✓ Unlimited sessions</li>
+              <li>✓ Personal learning plan</li>
+              <li>✓ All languages</li>
+              <li>✓ Priority AI</li>
+            </ul>
+            <button class="btn btn-secondary btn-block" onclick="App.toast('Premium plan selected (demo)','success')">Upgrade</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

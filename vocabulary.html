@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem">S</div>
+        <span class="font-bold">Speakly AI</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="speaking.html" class="sidebar-link">AI Speaking</a>
+        <a href="vocabulary.html" class="sidebar-link active">Vocabulary</a>
+        <a href="progress.html" class="sidebar-link">Progress</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title" data-i18n="vocabulary">Vocabulary</h1>
+        <div class="flex gap-2">
+          <input type="search" id="vocabSearch" class="form-input" placeholder="Search..." style="width:180px;padding:8px 12px" data-i18n="search" />
+          <button id="addVocabBtn" class="btn btn-primary btn-sm">+ Add Word</button>
+        </div>
+      </header>
+      <div class="page-body">
+        <div id="vocabList"></div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="addVocabModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add / Edit Word</h3>
+        <button data-modal-close class="btn btn-ghost btn-icon">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="vEditId" />
+        <div class="form-group"><label class="form-label">Word</label><input id="vWord" class="form-input" /></div>
+        <div class="form-group"><label class="form-label">Translation</label><input id="vTranslation" class="form-input" /></div>
+        <div class="form-group"><label class="form-label">Definition</label><textarea id="vDefinition" class="form-textarea"></textarea></div>
+        <div class="form-group"><label class="form-label">Example</label><input id="vExample" class="form-input" /></div>
+        <div class="form-group"><label class="form-label">Level</label>
+          <select id="vLevel" class="form-select"><option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1</option></select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-modal-close>Cancel</button>
+        <button class="btn btn-primary" id="saveVocabBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/vocabulary.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Questions — Admin</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="app-layout admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header"><span class="font-bold" style="color:#fff">Speakly Admin</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="sidebar-link">Overview</a>
+        <a href="ielts.html" class="sidebar-link active">IELTS Questions</a>
+        <a href="cefr.html" class="sidebar-link">CEFR</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">IELTS Question Bank</h1>
+        <button class="btn btn-primary btn-sm" onclick="App.toast('Add question form (demo)','info')">+ Add Question</button>
+      </header>
+      <div class="page-body">
+        <div class="tabs mb-4">
+          <button class="tab active">Part 1</button>
+          <button class="tab">Part 2</button>
+          <button class="tab">Part 3</button>
+        </div>
+        <div class="card">
+          <ul style="list-style:none">
+            <li class="flex justify-between items-center" style="padding:12px 0;border-bottom:1px solid var(--border)">What is your full name? <button class="btn btn-sm btn-ghost">Edit</button></li>
+            <li class="flex justify-between items-center" style="padding:12px 0;border-bottom:1px solid var(--border)">Where are you from? <button class="btn btn-sm btn-ghost">Edit</button></li>
+            <li class="flex justify-between items-center" style="padding:12px 0;border-bottom:1px solid var(--border)">Do you work or study? <button class="btn btn-sm btn-ghost">Edit</button></li>
+            <li class="flex justify-between items-center" style="padding:12px 0">Describe your hometown. <button class="btn btn-sm btn-ghost">Edit</button></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

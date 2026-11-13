@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEFR — Admin</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="app-layout admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header"><span class="font-bold" style="color:#fff">Speakly Admin</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="sidebar-link">Overview</a>
+        <a href="cefr.html" class="sidebar-link active">CEFR Tasks</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header"><h1 class="page-title">CEFR Task Management</h1></header>
+      <div class="page-body">
+        <div class="card">
+          <p class="text-muted mb-4">Manage speaking tasks by CEFR level (A1–C2). Demo list.</p>
+          <div class="flex flex-col gap-2">
+            <div class="flex justify-between p-3" style="background:var(--bg-primary);border-radius:8px"><span><span class="badge badge-primary">A1</span> Introduce yourself</span><button class="btn btn-sm btn-ghost">Edit</button></div>
+            <div class="flex justify-between p-3" style="background:var(--bg-primary);border-radius:8px"><span><span class="badge badge-primary">B1</span> Opinion on online learning</span><button class="btn btn-sm btn-ghost">Edit</button></div>
+            <div class="flex justify-between p-3" style="background:var(--bg-primary);border-radius:8px"><span><span class="badge badge-primary">C1</span> Analyse globalisation impact</span><button class="btn btn-sm btn-ghost">Edit</button></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

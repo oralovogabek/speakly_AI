@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-bg"></div>
+    <div class="card auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon">S</div>
+        <h2 data-i18n="login_title">Welcome back</h2>
+        <p class="text-muted" data-i18n="login_sub">Sign in to continue your learning journey</p>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" data-i18n="email">Email</label>
+          <input type="email" name="email" class="form-input" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="password">Password</label>
+          <input type="password" name="password" class="form-input" placeholder="••••••••" required />
+        </div>
+        <div class="flex justify-between items-center mb-4">
+          <a href="forgot-password.html" class="text-sm" style="color:var(--primary)" data-i18n="forgot_password">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="nav_login">Login</button>
+      </form>
+      <div class="auth-footer">
+        <span data-i18n="no_account">Don't have an account?</span>
+        <a href="register.html" data-i18n="nav_signup">Sign Up</a>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-ghost btn-sm" data-theme-toggle data-theme-icon></button>
+        <select data-lang-select class="form-select" style="width:auto;display:inline-block;padding:4px 8px;font-size:0.8rem;margin-left:8px">
+          <option value="en">EN</option>
+          <option value="uz">UZ</option>
+          <option value="ru">RU</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

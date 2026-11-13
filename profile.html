@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem">S</div>
+        <span class="font-bold">Speakly AI</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="profile.html" class="sidebar-link active">Profile</a>
+        <a href="pricing.html" class="sidebar-link">Pricing</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title" data-i18n="profile">Profile</h1>
+        <button class="btn btn-ghost btn-icon" data-theme-toggle data-theme-icon></button>
+      </header>
+      <div class="page-body" style="max-width:560px">
+        <div class="card">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="avatar avatar-xl" id="profileAvatar">U</div>
+            <div>
+              <h2 id="profileName">User</h2>
+              <p class="text-muted" id="profileEmail">email@example.com</p>
+            </div>
+          </div>
+          <form id="profileForm">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input name="name" id="pName" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Native Language</label>
+              <select name="nativeLang" id="pNative" class="form-select">
+                <option>Uzbek</option><option>Russian</option><option>English</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Learning Language</label>
+              <select name="learningLang" id="pLearning" class="form-select">
+                <option>English</option><option>German</option><option>French</option><option>Spanish</option><option>Japanese</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Current Level</label>
+              <select name="level" id="pLevel" class="form-select">
+                <option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1</option><option>C2</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Daily Goal (minutes)</label>
+              <input type="number" id="pGoal" class="form-input" min="5" max="120" value="15" />
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="save">Save</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const u = Auth.requireAuth();
+      document.getElementById('profileName').textContent = u.name;
+      document.getElementById('profileEmail').textContent = u.email;
+      document.getElementById('profileAvatar').textContent = u.name.charAt(0);
+      document.getElementById('pName').value = u.name;
+      document.getElementById('pNative').value = u.nativeLang || 'Uzbek';
+      document.getElementById('pLearning').value = u.learningLang || 'English';
+      document.getElementById('pLevel').value = u.level || 'B1';
+      document.getElementById('profileForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const updated = { ...u, name: pName.value, nativeLang: pNative.value, learningLang: pLearning.value, level: pLevel.value };
+        Storage.setUser(updated);
+        Storage.setSettings({ dailyGoal: +pGoal.value });
+        App.toast('Profile saved', 'success');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Plan — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem">S</div>
+        <span class="font-bold">Speakly AI</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="learning-plan.html" class="sidebar-link active">Learning Plan</a>
+        <a href="progress.html" class="sidebar-link">Progress</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title" data-i18n="learning_plan">Learning Plan</h1>
+        <button class="btn btn-ghost btn-icon" data-theme-toggle data-theme-icon></button>
+      </header>
+      <div class="page-body">
+        <div class="card mb-6">
+          <h3 class="mb-3">Your goal</h3>
+          <select id="goalSelect" class="form-select" style="max-width:280px">
+            <option>IELTS 7.0</option>
+            <option>CEFR B2</option>
+            <option>Daily Speaking Practice</option>
+            <option>Improve Pronunciation</option>
+          </select>
+          <button class="btn btn-primary mt-4" onclick="App.toast('Plan updated (demo)','success')">Update plan</button>
+        </div>
+        <h3 class="mb-4">This week's plan (demo)</h3>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="badge badge-primary mb-2">Mon</div>
+            <div class="font-medium">Daily Life conversation — 15 min</div>
+            <p class="text-sm text-muted">Focus: fluency</p>
+          </div>
+          <div class="card">
+            <div class="badge badge-primary mb-2">Tue</div>
+            <div class="font-medium">IELTS Part 1 practice — 20 min</div>
+            <p class="text-sm text-muted">Focus: short answers</p>
+          </div>
+          <div class="card">
+            <div class="badge badge-primary mb-2">Wed</div>
+            <div class="font-medium">Vocabulary review + speaking — 15 min</div>
+            <p class="text-sm text-muted">Focus: new words</p>
+          </div>
+          <div class="card">
+            <div class="badge badge-primary mb-2">Thu</div>
+            <div class="font-medium">Topic: Technology — 15 min</div>
+            <p class="text-sm text-muted">Focus: opinions</p>
+          </div>
+          <div class="card">
+            <div class="badge badge-primary mb-2">Fri</div>
+            <div class="font-medium">IELTS Part 2 cue card — 20 min</div>
+            <p class="text-sm text-muted">Focus: long turn</p>
+          </div>
+          <div class="card">
+            <div class="badge badge-success mb-2">Weekend</div>
+            <div class="font-medium">Free practice + review feedback</div>
+            <p class="text-sm text-muted">Optional</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

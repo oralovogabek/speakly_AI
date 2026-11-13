@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Speaking — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/speaking.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem">S</div>
+        <span class="font-bold">Speakly AI</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Main</div>
+          <a href="dashboard.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Dashboard</a>
+          <a href="speaking.html" class="sidebar-link active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg> AI Speaking</a>
+          <a href="ielts.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> IELTS</a>
+          <a href="cefr.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg> CEFR</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Learning</div>
+          <a href="progress.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Progress</a>
+          <a href="vocabulary.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Vocabulary</a>
+          <a href="history.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> History</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="btn btn-ghost btn-block" onclick="Auth.logout()">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">AI Speaking Partner</h1>
+        <div class="flex items-center gap-3">
+          <button class="btn btn-ghost btn-icon" data-theme-toggle data-theme-icon></button>
+        </div>
+      </header>
+
+      <div class="page-body">
+        <!-- Setup -->
+        <div id="setupPanel" class="speaking-setup">
+          <div class="setup-steps">
+            <div class="setup-step active">1. Language</div>
+            <div class="setup-step">2. Level</div>
+            <div class="setup-step">3. Topic</div>
+          </div>
+
+          <div class="card mb-6">
+            <h3 class="mb-3" data-i18n="select_language">Select Language</h3>
+            <select id="langSelect" class="form-select">
+              <option>English</option>
+              <option>Uzbek</option>
+              <option>Russian</option>
+              <option>German</option>
+              <option>French</option>
+              <option>Spanish</option>
+              <option>Italian</option>
+              <option>Turkish</option>
+              <option>Japanese</option>
+              <option>Korean</option>
+              <option>Arabic</option>
+              <option>Chinese</option>
+            </select>
+          </div>
+
+          <div class="card mb-6">
+            <h3 class="mb-3" data-i18n="select_level">Select Level</h3>
+            <div class="level-options">
+              <button class="level-btn" data-level="beginner">Beginner</button>
+              <button class="level-btn" data-level="elementary">Elementary</button>
+              <button class="level-btn selected" data-level="intermediate">Intermediate</button>
+              <button class="level-btn" data-level="upper">Upper Intermediate</button>
+              <button class="level-btn" data-level="advanced">Advanced</button>
+            </div>
+          </div>
+
+          <div class="card mb-6">
+            <h3 class="mb-3" data-i18n="select_topic">Select Topic</h3>
+            <div class="topic-grid" id="topicGrid"></div>
+          </div>
+
+          <button id="startSpeakingBtn" class="btn btn-primary btn-lg btn-block" data-i18n="start_session">Start Session</button>
+          <p class="text-center text-sm text-muted mt-4">Demo uses browser speech recognition. Allow microphone access for best experience.</p>
+        </div>
+
+        <!-- Active session -->
+        <div id="sessionPanel" class="speaking-session hidden">
+          <div class="session-header">
+            <div>
+              <span class="badge badge-primary" id="sessionTopic">Topic</span>
+            </div>
+            <div class="session-timer" id="sessionTimer">0:00</div>
+            <div class="flex gap-2">
+              <button id="pauseBtn" class="btn btn-secondary btn-sm" data-i18n="pause">Pause</button>
+              <button id="endSessionBtn" class="btn btn-danger btn-sm" data-i18n="end_session">End Session</button>
+            </div>
+          </div>
+
+          <div class="ai-avatar-area">
+            <div class="ai-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+            </div>
+            <div class="ai-status" id="aiStatus">Ready</div>
+          </div>
+
+          <div class="chat-transcript" id="chatTranscript"></div>
+
+          <div class="mic-controls">
+            <button id="micBtn" class="mic-btn" title="Hold or click to speak">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </button>
+          </div>
+          <p class="text-center text-sm text-muted">Click the microphone to speak. Click again to stop.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/speaking.js"></script>
+</body>
+</html>

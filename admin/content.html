@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content — Admin</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="app-layout admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header"><span class="font-bold" style="color:#fff">Speakly Admin</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="sidebar-link">Overview</a>
+        <a href="content.html" class="sidebar-link active">Learning Content</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header"><h1 class="page-title">Learning Content</h1></header>
+      <div class="page-body">
+        <div class="card">
+          <p class="text-muted">Manage conversation topics, vocabulary lists and lesson content. Connect to backend CMS in production.</p>
+          <button class="btn btn-primary mt-4" onclick="App.toast('Content editor (demo)','info')">Manage topics</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

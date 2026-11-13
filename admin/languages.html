@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Languages — Admin</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+<body>
+  <div class="app-layout admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header"><span class="font-bold" style="color:#fff">Speakly Admin</span></div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="sidebar-link">Overview</a>
+        <a href="languages.html" class="sidebar-link active">Languages</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Language Management</h1>
+        <button class="btn btn-primary btn-sm" onclick="App.toast('Add language (demo)','info')">+ Add Language</button>
+      </header>
+      <div class="page-body">
+        <div class="card">
+          <table class="table">
+            <thead><tr><th>Language</th><th>Code</th><th>Status</th><th>IELTS/CEFR</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>English</td><td>en</td><td><span class="status-dot active"></span>Active</td><td>Yes</td><td><button class="btn btn-sm btn-ghost">Edit</button></td></tr>
+              <tr><td>Uzbek</td><td>uz</td><td><span class="status-dot active"></span>Active</td><td>—</td><td><button class="btn btn-sm btn-ghost">Edit</button></td></tr>
+              <tr><td>Russian</td><td>ru</td><td><span class="status-dot active"></span>Active</td><td>—</td><td><button class="btn btn-sm btn-ghost">Edit</button></td></tr>
+              <tr><td>German</td><td>de</td><td><span class="status-dot active"></span>Active</td><td>—</td><td><button class="btn btn-sm btn-ghost">Edit</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

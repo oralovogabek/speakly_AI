@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session Results — Speakly AI</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/speaking.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon" style="width:32px;height:32px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.9rem">S</div>
+        <span class="font-bold">Speakly AI</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="speaking.html" class="sidebar-link">AI Speaking</a>
+        <a href="history.html" class="sidebar-link">History</a>
+        <a href="progress.html" class="sidebar-link">Progress</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="page-header">
+        <h1 class="page-title" data-i18n="session_results">Session Results</h1>
+        <a href="speaking.html" class="btn btn-primary btn-sm">New Session</a>
+      </header>
+      <div class="page-body" id="resultContent">
+        <div class="card text-center mb-6" style="padding:32px">
+          <div class="text-muted mb-2" data-i18n="overall_score">Overall Score</div>
+          <div style="font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent" id="rOverall">—</div>
+          <p class="text-sm text-muted mt-2">AI practice estimate · Not an official exam score</p>
+        </div>
+
+        <div class="result-scores">
+          <div class="card score-item"><div class="score-value" id="rFluency">—</div><div class="score-label" data-i18n="fluency">Fluency</div></div>
+          <div class="card score-item"><div class="score-value" id="rGrammar">—</div><div class="score-label" data-i18n="grammar">Grammar</div></div>
+          <div class="card score-item"><div class="score-value" id="rVocab">—</div><div class="score-label" data-i18n="vocab_score">Vocabulary</div></div>
+          <div class="card score-item"><div class="score-value" id="rPron">—</div><div class="score-label" data-i18n="pronunciation">Pronunciation</div></div>
+          <div class="card score-item"><div class="score-value" id="rCoh">—</div><div class="score-label" data-i18n="coherence">Coherence</div></div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card feedback-section">
+            <h3 data-i18n="feedback">Feedback</h3>
+            <p id="generalFeedback" class="text-secondary"></p>
+          </div>
+          <div class="card feedback-section">
+            <h3>Grammar corrections</h3>
+            <div id="mistakesList"></div>
+          </div>
+        </div>
+
+        <div class="card feedback-section mt-6">
+          <h3 data-i18n="improvements">Suggested Improvements</h3>
+          <div id="improvementTips"></div>
+        </div>
+
+        <div class="card feedback-section mt-6">
+          <h3>Transcript</h3>
+          <div class="chat-transcript" id="resultTranscript" style="max-height:280px"></div>
+        </div>
+
+        <div class="flex gap-3 mt-6 justify-center">
+          <a href="speaking.html" class="btn btn-primary">Practice again</a>
+          <a href="history.html" class="btn btn-secondary">View history</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/localization.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/analysis.js"></script>
+</body>
+</html>
